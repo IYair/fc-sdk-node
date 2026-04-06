@@ -6,8 +6,8 @@ export class CertificatesResource {
 
   upload(params: UploadCertificateParams): Promise<Certificate> {
     const formData = new FormData();
-    formData.append('cer', new Blob([params.cer]), 'cert.cer');
-    formData.append('key', new Blob([params.key]), 'cert.key');
+    formData.append('cer', new Blob([new Uint8Array(params.cer)]), 'cert.cer');
+    formData.append('key', new Blob([new Uint8Array(params.key)]), 'cert.key');
     formData.append('password', params.password);
     return this.client.postMultipart<Certificate>('/api/v1/certificates', formData);
   }
