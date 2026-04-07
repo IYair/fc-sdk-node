@@ -4,7 +4,7 @@
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org)
 [![TypeScript](https://img.shields.io/badge/TypeScript-native-3178C6.svg)](https://www.typescriptlang.org)
 
-SDK oficial de [FacturaCloud](https://factulink.com.mx) para Node.js y TypeScript. Facturación electrónica CFDI 4.0 conforme al Anexo 20 del SAT (México), con tipos nativos, auto-paginación y manejo de errores tipado.
+SDK oficial de [FactuLink](https://factulink.com.mx) para Node.js y TypeScript. Facturación electrónica CFDI 4.0 conforme al Anexo 20 del SAT (México), con tipos nativos, auto-paginación y manejo de errores tipado.
 
 ## Instalación
 
@@ -138,4 +138,4 @@ Sigue [Conventional Commits](https://www.conventionalcommits.org) en los mensaje
 
 ## Licencia
 
-[MIT](LICENSE) © 2026 Yair Chan and FacturaCloud contributors
+[MIT](LICENSE) © 2026 Yair Chan and FactuLink contributors
