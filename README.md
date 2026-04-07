@@ -1,14 +1,22 @@
 # @facturacloud/node
 
-SDK oficial de FacturaCloud para Node.js. Facturación electrónica (CFDI 4.0) con TypeScript nativo.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org)
+[![TypeScript](https://img.shields.io/badge/TypeScript-native-3178C6.svg)](https://www.typescriptlang.org)
+
+SDK oficial de [FacturaCloud](https://factulink.com.mx) para Node.js y TypeScript. Facturación electrónica CFDI 4.0 conforme al Anexo 20 del SAT (México), con tipos nativos, auto-paginación y manejo de errores tipado.
 
 ## Instalación
 
 ```bash
 npm install @facturacloud/node
+# o con pnpm
+pnpm add @facturacloud/node
+# o con yarn
+yarn add @facturacloud/node
 ```
 
-Requiere Node.js 18+.
+Requiere **Node.js 18+**. Soporta CommonJS y ESM.
 
 ## Quickstart
 
@@ -92,3 +100,42 @@ const fc = new FacturaCloud({
   retries: 2,                  // Default: 2 reintentos en 429/5xx
 });
 ```
+
+## Ambientes
+
+- **Sandbox** — usa API Keys con prefijo `sk_test_...`. Las llamadas usan MockPAC y no consumen folios reales. Ideal para pruebas e integración.
+- **Producción** — usa API Keys con prefijo `sk_live_...`. Las llamadas timbran con el PAC real (Finkok).
+
+El mismo `baseUrl` (`https://api.factulink.com.mx`) atiende ambos ambientes — el prefijo de la API Key determina cuál usar.
+
+## Documentación
+
+- **Portal de developers:** [docs.factulink.com.mx](https://docs.factulink.com.mx) (próximamente)
+- **OpenAPI spec:** [openapi.json](https://docs.factulink.com.mx/openapi.json)
+- **Quickstart REST:** ver el [README de FacturaCloud Docs](https://github.com/IYair/fc-docs)
+
+## Reportar bugs y feature requests
+
+Abre un issue en [github.com/IYair/fc-sdk-node/issues](https://github.com/IYair/fc-sdk-node/issues). Incluye:
+
+- Versión del SDK (`@facturacloud/node`)
+- Versión de Node.js
+- Snippet mínimo reproducible
+- Mensaje de error completo (sin tu API Key)
+
+## Contribuir
+
+Pull requests son bienvenidos. Antes de enviar:
+
+```bash
+pnpm install
+pnpm test           # 35 tests con vitest
+pnpm typecheck      # tsc --noEmit
+pnpm build          # tsup
+```
+
+Sigue [Conventional Commits](https://www.conventionalcommits.org) en los mensajes de commit (`fix(client):`, `feat(webhooks):`, etc.).
+
+## Licencia
+
+[MIT](LICENSE) © 2026 Yair Chan and FacturaCloud contributors

@@ -1,7 +1,7 @@
 {
   "name": "@facturacloud/node",
   "version": "0.1.1",
-  "description": "SDK oficial de FacturaCloud para Node.js",
+  "description": "Official Node.js / TypeScript SDK for FacturaCloud — facturación electrónica CFDI 4.0 (México)",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -14,7 +14,9 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "LICENSE",
+    "README.md"
   ],
   "scripts": {
     "build": "tsup",
@@ -32,9 +34,21 @@
     "facturacion",
     "sat",
     "mexico",
-    "sdk"
+    "sdk",
+    "factulink",
+    "anexo20",
+    "timbrado"
   ],
+  "author": "Yair Chan <iyaircc@alianzadev.codes>",
   "license": "MIT",
+  "homepage": "https://github.com/IYair/fc-sdk-node#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IYair/fc-sdk-node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/IYair/fc-sdk-node/issues"
+  },
   "devDependencies": {
     "@types/node": "^25.5.2",
     "tsup": "^8.0.0",
