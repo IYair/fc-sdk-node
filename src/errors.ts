@@ -1,11 +1,11 @@
-export class FacturaCloudError extends Error {
+export class FactuLinkError extends Error {
   constructor(message: string) {
     super(message);
-    this.name = 'FacturaCloudError';
+    this.name = 'FactuLinkError';
   }
 }
 
-export class ApiError extends FacturaCloudError {
+export class ApiError extends FactuLinkError {
   constructor(
     public readonly status: number,
     public readonly code: string,

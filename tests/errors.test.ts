@@ -1,17 +1,17 @@
 import { describe, it, expect } from 'vitest';
-import { FacturaCloudError, ApiError, AuthError, RateLimitError } from '../src/errors';
+import { FactuLinkError, ApiError, AuthError, RateLimitError } from '../src/errors';
 
 describe('errors', () => {
-  it('FacturaCloudError should be an Error with message', () => {
-    const err = new FacturaCloudError('something broke');
+  it('FactuLinkError should be an Error with message', () => {
+    const err = new FactuLinkError('something broke');
     expect(err).toBeInstanceOf(Error);
     expect(err.message).toBe('something broke');
-    expect(err.name).toBe('FacturaCloudError');
+    expect(err.name).toBe('FactuLinkError');
   });
 
   it('ApiError should contain status, code, and details', () => {
     const err = new ApiError(422, 'VALIDATION_ERROR', 'Campo inválido', [{ field: 'rfc' }]);
-    expect(err).toBeInstanceOf(FacturaCloudError);
+    expect(err).toBeInstanceOf(FactuLinkError);
     expect(err.status).toBe(422);
     expect(err.code).toBe('VALIDATION_ERROR');
     expect(err.details).toEqual([{ field: 'rfc' }]);

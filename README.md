@@ -1,4 +1,4 @@
-# @facturacloud/node
+# @factulink/node
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)](https://nodejs.org)
@@ -9,11 +9,11 @@ SDK oficial de [FactuLink](https://factulink.com.mx) para Node.js y TypeScript. 
 ## Instalación
 
 ```bash
-npm install @facturacloud/node
+npm install @factulink/node
 # o con pnpm
-pnpm add @facturacloud/node
+pnpm add @factulink/node
 # o con yarn
-yarn add @facturacloud/node
+yarn add @factulink/node
 ```
 
 Requiere **Node.js 18+**. Soporta CommonJS y ESM.
@@ -21,9 +21,9 @@ Requiere **Node.js 18+**. Soporta CommonJS y ESM.
 ## Quickstart
 
 ```typescript
-import FacturaCloud from '@facturacloud/node';
+import FactuLink from '@factulink/node';
 
-const fc = new FacturaCloud({
+const fc = new FactuLink({
   apiKey: 'sk_test_...',
 });
 
@@ -75,7 +75,7 @@ for await (const cfdi of fc.cfdis.listAutoPaginate({ estado: 'timbrado' })) {
 ## Manejo de errores
 
 ```typescript
-import FacturaCloud, { ApiError, AuthError, RateLimitError } from '@facturacloud/node';
+import FactuLink, { ApiError, AuthError, RateLimitError } from '@factulink/node';
 
 try {
   await fc.cfdis.create(params);
@@ -93,7 +93,7 @@ try {
 ## Configuración
 
 ```typescript
-const fc = new FacturaCloud({
+const fc = new FactuLink({
   apiKey: 'sk_live_...',       // Requerido
   baseUrl: 'https://...',      // Default: https://api.factulink.com.mx
   timeout: 30_000,             // Default: 30s
@@ -112,13 +112,13 @@ El mismo `baseUrl` (`https://api.factulink.com.mx`) atiende ambos ambientes — 
 
 - **Portal de developers:** [docs.factulink.com.mx](https://docs.factulink.com.mx) (próximamente)
 - **OpenAPI spec:** [openapi.json](https://docs.factulink.com.mx/openapi.json)
-- **Quickstart REST:** ver el [README de FacturaCloud Docs](https://github.com/IYair/fc-docs)
+- **Quickstart REST:** ver el [README de FactuLink Docs](https://github.com/IYair/fc-docs)
 
 ## Reportar bugs y feature requests
 
 Abre un issue en [github.com/IYair/fc-sdk-node/issues](https://github.com/IYair/fc-sdk-node/issues). Incluye:
 
-- Versión del SDK (`@facturacloud/node`)
+- Versión del SDK (`@factulink/node`)
 - Versión de Node.js
 - Snippet mínimo reproducible
 - Mensaje de error completo (sin tu API Key)

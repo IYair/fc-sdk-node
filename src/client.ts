@@ -1,10 +1,10 @@
-import { FacturaCloudConfig } from './types';
+import { FactuLinkConfig } from './types';
 import { ApiError, AuthError, RateLimitError } from './errors';
 
 const DEFAULT_BASE_URL = 'https://api.factulink.com.mx';
 const DEFAULT_TIMEOUT = 30_000;
 const DEFAULT_RETRIES = 2;
-const SDK_VERSION = '0.1.1';
+const SDK_VERSION = '0.2.0';
 
 interface RequestOptions {
   idempotencyKey?: string;
@@ -23,7 +23,7 @@ export class HttpClient {
   private readonly timeout: number;
   private readonly maxRetries: number;
 
-  constructor(config: FacturaCloudConfig) {
+  constructor(config: FactuLinkConfig) {
     this.apiKey = config.apiKey;
     this.baseUrl = (config.baseUrl ?? DEFAULT_BASE_URL).replace(/\/$/, '');
     this.timeout = config.timeout ?? DEFAULT_TIMEOUT;
@@ -69,7 +69,7 @@ export class HttpClient {
     // Build headers without Content-Type — browser/node sets it with boundary
     const headers: Record<string, string> = {
       Authorization: `Bearer ${this.apiKey}`,
-      'User-Agent': `@facturacloud/node/${SDK_VERSION}`,
+      'User-Agent': `@factulink/node/${SDK_VERSION}`,
     };
 
     const response = await fetch(url, {
@@ -179,7 +179,7 @@ export class HttpClient {
     const headers: Record<string, string> = {
       Authorization: `Bearer ${this.apiKey}`,
       'Content-Type': 'application/json',
-      'User-Agent': `@facturacloud/node/${SDK_VERSION}`,
+      'User-Agent': `@factulink/node/${SDK_VERSION}`,
     };
 
     if (options?.idempotencyKey) {

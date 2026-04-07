@@ -1,6 +1,6 @@
 {
-  "name": "@facturacloud/node",
-  "version": "0.1.1",
+  "name": "@factulink/node",
+  "version": "0.2.0",
   "description": "Official Node.js / TypeScript SDK for FactuLink — facturación electrónica CFDI 4.0 (México)",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -29,13 +29,13 @@
     "node": ">=18.0.0"
   },
   "keywords": [
+    "factulink",
     "facturacloud",
     "cfdi",
     "facturacion",
     "sat",
     "mexico",
     "sdk",
-    "factulink",
     "anexo20",
     "timbrado"
   ],

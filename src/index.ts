@@ -6,9 +6,9 @@ import { CatalogsResource } from './resources/catalogs';
 import { WebhooksResource } from './resources/webhooks';
 import { AiResource } from './resources/ai';
 import { ApiKeysResource } from './resources/api-keys';
-import type { FacturaCloudConfig } from './types';
+import type { FactuLinkConfig } from './types';
 
-export default class FacturaCloud {
+export default class FactuLink {
   private readonly client: HttpClient;
 
   readonly cfdis: CfdisResource;
@@ -19,7 +19,7 @@ export default class FacturaCloud {
   readonly ai: AiResource;
   readonly apiKeys: ApiKeysResource;
 
-  constructor(config: FacturaCloudConfig) {
+  constructor(config: FactuLinkConfig) {
     this.client = new HttpClient(config);
     this.cfdis = new CfdisResource(this.client);
     this.clients = new ClientsResource(this.client);
@@ -31,9 +31,9 @@ export default class FacturaCloud {
   }
 }
 
-export { FacturaCloudError, ApiError, AuthError, RateLimitError } from './errors';
+export { FactuLinkError, ApiError, AuthError, RateLimitError } from './errors';
 export type {
-  FacturaCloudConfig,
+  FactuLinkConfig,
   Cfdi,
   CreateCfdiParams,
   CancelCfdiParams,

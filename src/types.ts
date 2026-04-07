@@ -1,4 +1,4 @@
-export interface FacturaCloudConfig {
+export interface FactuLinkConfig {
   apiKey: string;
   baseUrl?: string;
   timeout?: number;
