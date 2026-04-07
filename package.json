@@ -1,6 +1,7 @@
 {
   "name": "@factulink/node",
   "version": "0.2.0",
+  "packageManager": "pnpm@10.28.2",
   "description": "Official Node.js / TypeScript SDK for FactuLink — facturación electrónica CFDI 4.0 (México)",
   "type": "module",
   "main": "./dist/index.cjs",
