@@ -25,7 +25,7 @@ describe('HttpClient', () => {
     mockFetch.mockReset();
     client = new HttpClient({
       apiKey: 'sk_test_abc123',
-      baseUrl: 'https://api.facturacloud.mx',
+      baseUrl: 'https://api.factulink.com.mx',
       timeout: 5000,
       retries: 2,
     });
@@ -42,7 +42,7 @@ describe('HttpClient', () => {
 
     expect(mockFetch).toHaveBeenCalledOnce();
     const [url, init] = mockFetch.mock.calls[0];
-    expect(url).toBe('https://api.facturacloud.mx/v1/clients');
+    expect(url).toBe('https://api.factulink.com.mx/v1/clients');
     expect(init.headers['Authorization']).toBe('Bearer sk_test_abc123');
     expect(init.method).toBe('GET');
   });
@@ -55,7 +55,7 @@ describe('HttpClient', () => {
 
     expect(mockFetch).toHaveBeenCalledOnce();
     const [url, init] = mockFetch.mock.calls[0];
-    expect(url).toBe('https://api.facturacloud.mx/v1/clients');
+    expect(url).toBe('https://api.factulink.com.mx/v1/clients');
     expect(init.method).toBe('POST');
     expect(JSON.parse(init.body)).toEqual({ rfc: 'XAXX010101000', nombre: 'Test' });
     expect(result).toEqual(responseBody);

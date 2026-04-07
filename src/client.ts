@@ -1,10 +1,10 @@
 import { FacturaCloudConfig } from './types';
 import { ApiError, AuthError, RateLimitError } from './errors';
 
-const DEFAULT_BASE_URL = 'https://api.facturacloud.mx';
+const DEFAULT_BASE_URL = 'https://api.factulink.com.mx';
 const DEFAULT_TIMEOUT = 30_000;
 const DEFAULT_RETRIES = 2;
-const SDK_VERSION = '0.1.0';
+const SDK_VERSION = '0.1.1';
 
 interface RequestOptions {
   idempotencyKey?: string;

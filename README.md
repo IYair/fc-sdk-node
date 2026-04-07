@@ -87,7 +87,7 @@ try {
 ```typescript
 const fc = new FacturaCloud({
   apiKey: 'sk_live_...',       // Requerido
-  baseUrl: 'https://...',      // Default: https://api.facturacloud.mx
+  baseUrl: 'https://...',      // Default: https://api.factulink.com.mx
   timeout: 30_000,             // Default: 30s
   retries: 2,                  // Default: 2 reintentos en 429/5xx
 });
