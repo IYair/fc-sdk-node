@@ -9,22 +9,22 @@ export class CertificatesResource {
     formData.append('cer', new Blob([new Uint8Array(params.cer)]), 'cert.cer');
     formData.append('key', new Blob([new Uint8Array(params.key)]), 'cert.key');
     formData.append('password', params.password);
-    return this.client.postMultipart<Certificate>('/api/v1/certificates', formData);
+    return this.client.postMultipart<Certificate>('/api/v1/csds', formData);
   }
 
   list(): Promise<PaginatedResponse<Certificate>> {
-    return this.client.get<PaginatedResponse<Certificate>>('/api/v1/certificates');
+    return this.client.get<PaginatedResponse<Certificate>>('/api/v1/csds');
   }
 
   get(id: string): Promise<Certificate> {
-    return this.client.get<Certificate>(`/api/v1/certificates/${id}`);
+    return this.client.get<Certificate>(`/api/v1/csds/${id}`);
   }
 
   update(id: string, params: Partial<Pick<Certificate, 'es_default'>>): Promise<Certificate> {
-    return this.client.patch<Certificate>(`/api/v1/certificates/${id}`, params);
+    return this.client.patch<Certificate>(`/api/v1/csds/${id}`, params);
   }
 
   delete(id: string): Promise<void> {
-    return this.client.delete<void>(`/api/v1/certificates/${id}`);
+    return this.client.delete<void>(`/api/v1/csds/${id}`);
   }
 }
